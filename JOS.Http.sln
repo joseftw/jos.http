@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JOS.Http", "src\JOS.Http\JOS.Http.csproj", "{A9CA73AD-DA10-422E-9213-ABCB4F189F4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{77F3FEB6-C903-49C8-99B2-4D695E2C5B85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{B0D5EC24-2A6E-4B10-A631-C67D2E7C8E30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JOS.Http.Tests", "test\JOS.Http.Tests\JOS.Http.Tests.csproj", "{6E62872C-1A98-455E-B614-A854C1C7E4AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{3EECEED7-3FE9-4099-B89B-E311478E07F5}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9CA73AD-DA10-422E-9213-ABCB4F189F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9CA73AD-DA10-422E-9213-ABCB4F189F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9CA73AD-DA10-422E-9213-ABCB4F189F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9CA73AD-DA10-422E-9213-ABCB4F189F4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E62872C-1A98-455E-B614-A854C1C7E4AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E62872C-1A98-455E-B614-A854C1C7E4AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E62872C-1A98-455E-B614-A854C1C7E4AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E62872C-1A98-455E-B614-A854C1C7E4AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A9CA73AD-DA10-422E-9213-ABCB4F189F4E} = {77F3FEB6-C903-49C8-99B2-4D695E2C5B85}
+		{6E62872C-1A98-455E-B614-A854C1C7E4AE} = {B0D5EC24-2A6E-4B10-A631-C67D2E7C8E30}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21EFF573-2034-41D0-B912-89B50F3D04D8}
+	EndGlobalSection
+EndGlobal
