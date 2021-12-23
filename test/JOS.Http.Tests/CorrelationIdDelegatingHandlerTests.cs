@@ -37,7 +37,7 @@ public class CorrelationIdDelegatingHandlerTests
 
         _ = await new HttpMessageInvoker(_sut).SendAsync(request, CancellationToken.None);
 
-        request.Headers.ShouldNotContain(x => x.Key.Equals("X-Correlation-Id", StringComparison.OrdinalIgnoreCase));
+        request.Headers.ShouldNotContain(x => x.Key.Equals(Headers.CorrelationId, StringComparison.OrdinalIgnoreCase));
     }
 
     [Fact]
@@ -47,12 +47,12 @@ public class CorrelationIdDelegatingHandlerTests
         _fakeCorrelationIdQuery.Execute().Returns(correlationId);
         var request = new HttpRequestMessage(HttpMethod.Get, "/correlation-id")
         {
-            Headers = {{ "X-Correlation-Id", "existing-correlation-id" }}
+            Headers = {{ Headers.CorrelationId, "existing-correlation-id" }}
         };
 
         _ = await new HttpMessageInvoker(_sut).SendAsync(request, CancellationToken.None);
 
-        request.Headers.TryGetValues("X-Correlation-Id", out var correlationIdHeaderValues).ShouldBeTrue();
+        request.Headers.TryGetValues(Headers.CorrelationId, out var correlationIdHeaderValues).ShouldBeTrue();
         var correlationIdValueList = correlationIdHeaderValues!.ToList();
         correlationIdValueList.Count.ShouldBe(1);
         correlationIdValueList.First().ShouldBe("existing-correlation-id");
@@ -67,7 +67,7 @@ public class CorrelationIdDelegatingHandlerTests
 
         _ = await new HttpMessageInvoker(_sut).SendAsync(request, CancellationToken.None);
         
-        request.Headers.TryGetValues("X-Correlation-Id", out var correlationIdHeaderValues).ShouldBeTrue();
+        request.Headers.TryGetValues(Headers.CorrelationId, out var correlationIdHeaderValues).ShouldBeTrue();
         var correlationIdValueList = correlationIdHeaderValues!.ToList();
         correlationIdValueList.Count.ShouldBe(1);
         correlationIdValueList.First().ShouldBe(correlationId);

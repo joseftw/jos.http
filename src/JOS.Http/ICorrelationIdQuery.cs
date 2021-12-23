@@ -1,9 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace JOS.Http;
 
 public interface ICorrelationIdQuery
 {
-    Task<string> Execute();
+    Task<string?> Execute();
 }

@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\JOS.Http.Asp\JOS.Http.Asp.csproj" />
     <ProjectReference Include="..\..\src\JOS.Http\JOS.Http.csproj" />
   </ItemGroup>
 

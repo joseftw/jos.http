@@ -7,7 +7,6 @@ namespace JOS.Http.DelegatingHandlers;
 
 public class CorrelationIdDelegatingHandler : DelegatingHandler
 {
-    private const string CorrelationIdHeaderName = "X-Correlation-Id";
     private readonly ICorrelationIdQuery _correlationIdQuery;
 
     public CorrelationIdDelegatingHandler(ICorrelationIdQuery correlationIdQuery)
@@ -18,9 +17,9 @@ public class CorrelationIdDelegatingHandler : DelegatingHandler
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
         var correlationId = await _correlationIdQuery.Execute();
-        if (!string.IsNullOrWhiteSpace(correlationId) && !request.Headers.Contains(CorrelationIdHeaderName))
+        if (!string.IsNullOrWhiteSpace(correlationId) && !request.Headers.Contains(Headers.CorrelationId))
         {
-            request.Headers.TryAddWithoutValidation(CorrelationIdHeaderName, correlationId);
+            request.Headers.TryAddWithoutValidation(Headers.CorrelationId, correlationId);
         }
 
         return await base.SendAsync(request, cancellationToken);
